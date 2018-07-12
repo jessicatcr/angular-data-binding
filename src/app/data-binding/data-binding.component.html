@@ -1,4 +1,4 @@
-<section class="property-binding">
+<!--<section class="property-binding">-->
 
   <!--<article>-->
     <!--<h3>Interpolation / Interpolação</h3>-->
@@ -15,8 +15,101 @@
     <!--<img bind-src="urlImagem">-->
   <!--</article>-->
 
-  <article>
-    <h3>Class e Style Binding</h3>
-  </article>
+  <!--<article>-->
+    <!--<h3>Class e Style Binding</h3>-->
+    <!--<div>-->
+      <!--Selecione uma classe:-->
+      <!--<select #classe (change) = "0" >-->
+        <!--<option value="alert-success">Sucesso</option>-->
+        <!--<option value="alert-info">Info</option>-->
+        <!--<option value="alert-warning">Alerta</option>-->
+        <!--<option value="alert-danger">Erro</option>-->
+      <!--</select>-->
+      <!--<br>-->
+      <!--<br>-->
 
+      <!--<div class="alert {{classe.value}}" role="alert">-->
+        <!--TExto colorido conforme valor do combobox.-->
+      <!--</div>-->
+
+      <!--<div class="alert" role="alert"-->
+        <!--[class.alert-success] = "classe.value == 'alert-success'">-->
+        <!--Sucesso</div>-->
+      <!--<div class="alert" role="alert"-->
+           <!--[class.alert-info] = "classe.value == 'alert-info'">-->
+        <!--Info</div>-->
+      <!--<div class="alert" role="alert"-->
+           <!--[class.alert-warning] = "classe.value == 'alert-warning'">-->
+        <!--Alerta</div>-->
+      <!--<div class="alert" role="alert"-->
+           <!--[class.alert-danger] = "classe.value == 'alert-danger'">-->
+        <!--Erro</div>-->
+
+      <!--<div class="alert alert-danger" role="alert"-->
+        <!--[style.display] ="classe.value == 'alert-danger' ? 'block' : 'none'"> &lt;!&ndash;Se sim (?) então block, se não (:) então none&ndash;&gt;-->
+        <!--Esse texto somente em caso de Erro</div>-->
+    <!--</div>-->
+  <!--</article>-->
+
+<!--</section>-->
+<!--<section>-->
+  <!--<article>-->
+    <!--<h3>Event Binding</h3>-->
+    <!--<div>-->
+      <!--<button (click)="botaoClicado()"-->
+        <!--class="btn btn-primary">-->
+        <!--Me clique</button>-->
+      <!--<br><br>-->
+
+      <!--<input type="text" #campoInput-->
+        <!--(keyup)="onKeyUp($event)"-->
+        <!--(keyup.enter)="salvarValor(campoInput.value)"-->
+        <!--(blur)="salvarValor(campoInput.value)"/> &lt;!&ndash;quando campo "perde o foco", clicando fora do input, enter ou no botão&ndash;&gt;-->
+      <!--<p>Valor atual: {{valorAtual}}</p>-->
+      <!--<p>Valor salvo: {{valorSalvo}}</p>-->
+      <!--<br>-->
+      <!--<span-->
+      <!--(mouseover)="onMouseOverOut()"-->
+      <!--(mouseout)="onMouseOverOut()"-->
+      <!--[class.highlight]="isMouseOver"-->
+      <!--&gt;-->
+        <!--Passe o mouse sobre mim-->
+      <!--</span>-->
+
+    <!--</div>-->
+  <!--</article>-->
+<!--</section>-->
+
+<!--<section>-->
+  <!--<article>-->
+    <!--<h3>Two-way data-binding</h3>-->
+    <!--<div>-->
+      <!--<input type = "text"-->
+        <!--[value] = "nome"-->
+        <!--(input) = "nome = $event.target.value"-->
+      <!--/>-->
+      <!--<input type = "text"-->
+             <!--[ngModel]= "nome" (ngModelChange) = "nome = $event"-->
+      <!--/>-->
+
+      <!--<input type="text" [(ngModel)]="nome">-->
+
+      <!--<p>Você digitou: {{ nome }}</p>-->
+    <!--</div>-->
+
+    <!--<div>-->
+      <!--<p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos</p>-->
+      <!--<input type="text" [(ngModel)]="pessoa.nome">-->
+      <!--<input type="text" [(ngModel)]="pessoa.idade">-->
+    <!--</div>-->
+  <!--</article>-->
+
+<!--</section>-->
+<section>
+  <article>
+    <h3>Input/Output Property</h3>
+    <app-curso [nomeCurso]="nomeDoCurso"></app-curso>
+    <!--<contador valor="10"></contador>--> <!--Como é valor fixo, não precisa de property binding-->
+    <contador [valor]=valorInicial></contador>
+  </article>
 </section>
